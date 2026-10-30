@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        # Nilai dibaca otomatis dari file .env di folder yang sama
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
+    ports:
+      - "8080:80"
+    restart: unless-stopped
